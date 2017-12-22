@@ -1,0 +1,68 @@
+	body >div{
+		text-align: center;
+		margin: auto;
+		width: 80%;
+		font-family: arial;
+		height: 500px;
+		border: 2px solid black;
+		padding: 7px;
+	}
+
+	div > div{
+		top: 150px;
+		width: 400px;
+		min-height: 40px;
+		position: absolute;
+		background-color: grey;
+		margin: auto;
+		left: 0;
+		right: 0;
+		border-radius: 3px;	
+		padding: 20px;
+		color: white;
+	}
+
+	input, button, span, p {
+		margin: auto;
+		display: block;
+		position: relative;
+	}
+
+	span {
+		font-size: 40px;
+		top:40px;
+		
+	}
+	body> div > p {
+		top: 60px;
+		font-size: 12px;	
+	}
+	input{
+		width: 200px;
+		border-radius: 5px;
+		border: 2px solid #b2b7b3;
+		top:300px;
+	}
+
+	button{
+		width: 125px;
+		border-radius: 5px;
+		top: 325px;
+		background: #006cf999;
+		border-width: 0px;
+		height: 30px;
+		color: white;
+	}
+
+	button:hover {
+		background: #0094bd;
+	}
+
+
+	@media only screen and ( max-width : 582px ) {
+
+		div > div {
+			top: 225px;
+			width: 60%;
+		}
+	}

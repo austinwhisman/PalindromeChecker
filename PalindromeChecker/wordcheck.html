@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+
+	<div>
+		<span>PALINDROME CHECKER</span>
+		<p></p>
+		<div id="results_container"><p id="results">Type a word into the text box and see if the word is spelt the same backwards as well!</p></div>
+		<input type="text" id="checkthis">
+		<button type ="button" id="btn" onClick="checkIfEqual(this)">
+			Click here
+		</button>
+	</div>
+
+	<script>
+		function checkIfEqual(word){
+
+			//grabs the ID's for the results container
+			var result = document.getElementById("results"),
+			div = document.getElementById('results_container');
+
+			//Takes the word from the text box, and reverses it.
+			//and stores that into a temp variable.
+			var word = document.getElementById('checkthis').value.toUpperCase(),
+			temp = word.split('').reverse().join('');
+			if(word.length > 26) {
+				div.style.backgroundColor = "#ef2a2a";
+				return result.innerHTML= "Value is too long. Keep it below 25 characters please. The Longest Palindrome is Saippuakivikauppias, anyways ;)"
+			}
+			else if(!/^[A-Z]+$/.test(word)){
+				div.style.backgroundColor = "#ef2a2a";
+				return result.innerHTML= word +": This contains invalid Characters. Please enter only letters"
+			}else if(temp === word) {
+				//changes background to green, and shows the compared values
+				div.style.backgroundColor = "#11e81c";
+				return result.innerHTML=word + " : " + temp + '<br>TRUE';
+				
+			} else {
+				//changes background to red, and shows the compared values
+				div.style.backgroundColor = "#ef2a2a";
+				return result.innerHTML=word + " : " + temp + '<br>FALSE';
+				
+				
+			}
+		}
+
+	</script>
+</body>
+</html>
+
